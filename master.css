@@ -1,12 +1,14 @@
-#mainbox { margin-top:20px; }
+body { padding: 10px; }
+#mainbox { margin-top:10px; }
+.container { width: 100%;  max-width: 960px; }
 body {
-	line-height: 180%;
+  line-height: 180%;
 }
 h1 { color:#c00; text-align: center; }
 h1 i { font-size: 15px; color: #333; font-style: normal;}
 pre{margin:1em 0;font-size:12px;background-color:#eee;padding:8px;color:#444;overflow:auto;border:0px;}
 pre::-webkit-scrollbar{height:8px;width:8px;}
-pre code{padding:0!important;font-size:12px!important;background-color:#eee!important;border:none!important;}
+pre code{padding:0!important;font-size:12px!important;background-color:#eee!important;border:none!important; display:inline-block; }
 code{font-size:12px!important;background-color:#f8f8ff!important;color:#444!important;padding:0 .2em!important;border:1px solid #dedede!important;}
 
 .box { margin-bottom:18px; }
