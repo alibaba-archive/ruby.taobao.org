@@ -65,7 +65,28 @@ https://ruby.taobao.org
         <h6>For Linux</h6>
         <div class="highlight"><pre><span class="nv">$ </span>sed -i <span class="s1">'s!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
       </div>
-
+      
+      <div class="box">
+        <h5>常见问题</h5>
+        <ol>
+          <li>
+            <p>Q: 某些时候 <code>gem install rails --pre</code> （安装 preview 版本的 Gem）无法正确安装？</p>
+            <p>A: 由于淘宝镜像这边没有实现 /api 下面的协议，而安装 pre 版本需要这些东西检查依赖，所以如果你需要这类安装需求的时候，请临时切换回官方的 RubyGems 源。</p>
+          </li>
+          <li>
+            <p>Q: 为何我新发布的 Gem 在淘宝源上面无法安装？</p>
+            <p>A: 由于同步是定期执行的，新发布的 Gem 可能没有那么快同步过来，你需要稍等一段时间后才能使用。</p>
+          </li>
+          <li>
+            <p>Q: 已经换成淘宝源了，但 <code>bundle install</code> 或 <code>gem install xxx</code> 的时候卡住很久不动？</p>
+            <p>A: 这有可能是你网络问题，或者没有正确的好 gem 的源，你可以尝试 <code>gem install xxx -V</code> 并把执行过程的结果在 Ruby China 上面发帖求助。</p>
+          </li>
+          <li>
+            <p>Q: <code>gem install xxx</code> 的时候遇到错误信息包含：“Error fetching data: Errno::ETIMEDOUT: Operation timed out - connect(2)”</p>
+            <p>A: 网络问题导致请求淘宝服务器被连接重置了，在遇到此类情况的时候，你可以尝试换一台机器或网络尝试安装，看是否还有同样的问题，以确定是淘宝镜像服务器的问题还是你的环境问题，如果你换了环境仍然有问题，请上 Ruby China 发帖求助。</p>
+          </li>
+        </ol>
+      </div>
     </div>
     <footer class="footer">
       <div class="container">
