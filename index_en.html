@@ -13,21 +13,21 @@
   </head>
   <body>
     <div id="mainbox" class="container">
-      <h1>RubyGems 镜像 <i>- 淘宝网</i></h1>
-      <div class="pull-right"><a href="index_en.html">English Version</a></div>
+      <h1>RubyGems Mirror <i>- Taobao</i></h1>
+      <div class="pull-right"><a href="/index.html">中文版本</a></div>
       <div class="box summary">
-        <h5>为什么有这个？</h5>
+        <h5>Why have this mirror?</h5>
         <div class="content">
-          <p>由于国内网络原因（你懂的），导致 <a href="http://rubygems.org" target="_blank">rubygems.org</a> 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 <code>gem install rack</code> 或 <code>bundle install</code> 的时候半天没有响应，具体可以用 <code>gem install rails -V</code> 来查看执行过程。</p>
+          <p>Due to network issues in China (you understand)，there are intermittent connection failures when accessing to <a href="http://rubygems.org" target="_blank">rubygems.org</a> and the files hosted on Amazon S3。That's why using <code>gem install rack</code> or <code>bundle install</code> might take forever with no response. (Try <code>gem install rails -V</code> to see the entire process.</p>
         </div>
       </div>
 
       <div class="box sync_info">
-        这是一个完整 rubygems.org 镜像，你可以用此代替官方版本，同步频率目前为<span class="time">15分钟一次</span>以保证尽量与官方服务同步。<br />
+        This is a complete mirror of rubygems.org, so you can use it to replace the official version. In order to make sure it is in sync with the official server, it is currently synchronized once every 15 minutes.<br />
       </div>
 
       <div class="box">
-        <h5>如何使用？</h5>
+        <h5>How do I use it?</h5>
         <div class="highlight">
           <pre><span class="nv">$ </span>gem sources --remove https://rubygems.org/
 <span class="nv">$ </span>gem sources -a https://ruby.taobao.org/
@@ -35,11 +35,11 @@
 *** CURRENT SOURCES ***
 
 https://ruby.taobao.org
-<span class="c"># 请确保只有 ruby.taobao.org</span>
+<span class="c"># Ensure it only has ruby.taobao.org</span>
 <span class="nv">$ </span>gem install rails</pre>
         </div>
 
-        <h5>如果你是用 Bundle (Rails 项目)</h5>
+        <h5>If you use a Gemfile</h5>
         <div class="highlight">
           <pre><span class="n">source</span> <span class="s1">'https://ruby.taobao.org/'</span>
 <span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.0'</span>
@@ -48,11 +48,11 @@ https://ruby.taobao.org
       </div>
 
       <div class="box ruby_list">
-        <h5>Ruby 源代码镜像</h5>
+        <h5>Ruby Source Code Mirror</h5>
         <div id="other_links" style="margin-bottom:20px;">
-          <a href="/mirrors/ruby" class="btn">Ruby 源代码下载镜像</a>
+          <a href="/mirrors/ruby" class="btn">Ruby Source Code Download Mirror</a>
         </div>
-        <p>本镜像来源于 <a href="http://cache.ruby-lang.org" target="_blank">cache.ruby-lang.org</a> 用于改善国内 Ruby 安装的速度。</p>
+        <p>This is a mirror of <a href="http://cache.ruby-lang.org" target="_blank">cache.ruby-lang.org</a> that can be used to speed up Ruby installations for people in China.</p>
         <ul style="font-size:14px;margin:10px 40px 30px 40px;">
           <li><a href="/mirrors/ruby/ruby-2.2.2.tar.gz">ruby-2.2.2.tar.gz</a></li>
           <li><a href="/mirrors/ruby/ruby-2.1.4.tar.gz">ruby-2.1.4.tar.gz</a></li>
@@ -61,7 +61,7 @@ https://ruby.taobao.org
           <li><a href="/mirrors/ruby/1.9/ruby-1.9.2-p320.tar.gz">ruby-1.9.2-p320.tar.gz</a></li>
           <li><a href="/mirrors/ruby/1.8/ruby-1.8.7-p358.tar.gz">ruby-1.8.7-p358.tar.gz</a></li>
         </ul>
-        <p>修改 RVM ，改用本站作为下载源, 提高安装速度。</p>
+        <p>Modify RVM to use this site as the download source to improve download speeds.</p>
         <h6>For Mac</h6>
         <div class="highlight"><pre><span class="nv">$ </span>sed -i .bak <span class="s1">'s!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
         <h6>For Linux</h6>
@@ -69,23 +69,23 @@ https://ruby.taobao.org
       </div>
 
       <div class="box">
-        <h5>常见问题</h5>
+        <h5>Common questions</h5>
         <ol>
           <li>
-            <p>Q: 某些时候 <code>gem install rails --pre</code> （安装 preview 版本的 Gem）无法正确安装？</p>
-            <p>A: 由于淘宝镜像这边没有实现 /api 下面的协议，而安装 pre 版本需要这些东西检查依赖，所以如果你需要这类安装需求的时候，请临时切换回官方的 RubyGems 源。</p>
+            <p>Q: Why does the <code>gem install rails --pre</code> (Installing a preview version of the Gem) occasionally fail to install properly?</p>
+            <p>A: Taobao's mirros does not implement /api, and installing pre versions depends on this functionality. If you need to install a preview version, please temporarily use the official RubyGems mirror as your source.</p>
           </li>
           <li>
-            <p>Q: 为何我新发布的 Gem 在淘宝源上面无法安装？</p>
-            <p>A: 由于同步是定期执行的，新发布的 Gem 可能没有那么快同步过来，你需要稍等一段时间后才能使用。</p>
+            <p>Q: Why can't my newly published gem be published using Taobao's mirror?</p>
+            <p>A: Since synchronization is only executed periodically, new gems might not be synchronized yet. You will need to wait a while before trying again.</p>
           </li>
           <li>
-            <p>Q: 已经换成淘宝源了，但 <code>bundle install</code> 或 <code>gem install xxx</code> 的时候卡住很久不动？</p>
-            <p>A: 这有可能是你网络问题，或者没有正确的好 gem 的源，你可以尝试 <code>gem install xxx -V</code> 并把执行过程的结果在 Ruby China 上面发帖求助。</p>
+            <p>Q: I've alread switched my sources to Taobao, but <code>bundle install</code> or <code>gem install xxx</code> are stuck for a long time. Why?</p>
+            <p>A: This is possibly an issue with your network, or the source for the gem is not correct. You can try <code>gem install xxx -V</code> and create a post on Ruby China with the details asking for support.</p>
           </li>
           <li>
-            <p>Q: <code>gem install xxx</code> 的时候遇到错误信息包含：“Error fetching data: Errno::ETIMEDOUT: Operation timed out - connect(2)”</p>
-            <p>A: 网络问题导致请求淘宝服务器被连接重置了，在遇到此类情况的时候，你可以尝试换一台机器或网络尝试安装，看是否还有同样的问题，以确定是淘宝镜像服务器的问题还是你的环境问题，如果你换了环境仍然有问题，请上 Ruby China 发帖求助。</p>
+            <p>Q: When using <code>gem install xxx</code> why do I encounter this error: "Error fetching data: Errno::ETIMEDOUT: Operation timed out - connect(2)"?</p>
+            <p>A: Network issues caused requests to Taobao's server to reset the connection. When encountering this issue, please try to access the mirror from another computer to see if the issue is with Taobao's mirror, or with your environment. If after switching environments, you still encounter the issue, please create a post on Ruby China.</p>
           </li>
         </ol>
       </div>
@@ -95,7 +95,7 @@ https://ruby.taobao.org
         <div class="pull-right">
           <a href="http://taobao.com" target="_blank"><img src="///rubygems-china.oss.aliyuncs.com/public/T1ogqgXfXeXXXXXXXX-168-42.png" style="width:80px;" /></a>
         </div>
-        服务由 <a href="http://taobao.com" target="_blank">淘宝网</a> 提供, 如遇到问题请联系: <a href="mailto:huacnlee@gmail.com">huacnlee@gmail.com</a>
+        This service is provided by <a href="http://taobao.com" target="_blank">Taobao</a>. If you encounter any issues, please contact (Chinese only): <a href="mailto:huacnlee@gmail.com">huacnlee@gmail.com</a> or open an issue in our <a href="https://github.com/alibaba/ruby.taobao.org">Github repo</a>.
       </div>
     </footer>
   </body>
