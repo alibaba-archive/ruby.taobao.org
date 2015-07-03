@@ -39,9 +39,16 @@ https://ruby.taobao.org
 <span class="nv">$ </span>gem install rails</pre>
         </div>
 
-        <h5>如果你是用 Bundle (Rails 项目)</h5>
+        <h5>如果你使用 Gemfile 和 Bundle (例如：Rails 项目)</h5>
+        你可以用bundle的<a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">gem源代码镜像命令</a>。
         <div class="highlight">
-          <pre><span class="n">source</span> <span class="s1">'https://ruby.taobao.org/'</span>
+          <pre><span class="nv">$ </span>bundle config mirror.https://rubygems.org https://ruby.taobao.org
+          </pre>
+        </div>
+
+        这样你不用改你的 Gemfile 的 source。
+        <div class="highlight">
+          <pre><span class="n">source</span> <span class="s1">'https://rubygems.org/'</span>
 <span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.0'</span>
 <span class="o">.</span><span class="n">.</span><span class="o">.</span></pre>
         </div>

@@ -40,7 +40,15 @@ https://ruby.taobao.org
         </div>
 
         <h5>If you use a Gemfile</h5>
+        You can use bundle's<a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">gem source mirror</a> command.
         <div class="highlight">
+          <pre><span class="nv">$ </span>bundle config mirror.https://rubygems.org https://ruby.taobao.org
+          </pre>
+        </div>
+
+        Then you don't need to change the source in your Gemfile.
+        <div class="highlight">
+          <pre><span class="n">source</span> <span class="s1">'https://rubygems.org/'</span>        <div class="highlight">
           <pre><span class="n">source</span> <span class="s1">'https://ruby.taobao.org/'</span>
 <span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.0'</span>
 <span class="o">.</span><span class="n">.</span><span class="o">.</span></pre>
