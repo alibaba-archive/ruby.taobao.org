@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+source /usr/local/rvm/environments/ruby-2.1.1
+
+count=`ps aux | grep mirror:update | wc -l`
+if [ ${count} -lt 2 ] ; then
+  echo
+  echo "------- start at $(date)"
+  cd /home/admin/rubygems-mirror/
+  bundle exec rake mirror:update
+  echo
+  echo "------- database sync start at $(date)"
+  cd /home/admin/bundler-api/
+  bundle exec rake update[100]
+  echo
+  echo "------- end at $(date)"
+fi
