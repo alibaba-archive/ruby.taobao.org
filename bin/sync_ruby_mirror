@@ -1,7 +1,8 @@
+#!/usr/bin/env bash
 REJECT_DIRS=/archives/lang/ruby/1.0,/archives/lang/ruby/1.1a,/archives/lang/ruby/1.1b,/archives/lang/ruby/1.1c,/archives/lang/ruby/1.1d,/archives/lang/ruby/1.2,/archives/lang/ruby/1.3,/archives/lang/ruby/1.4,/archives/lang/ruby/1.6,/archives/lang/ruby/1.8,/archives/lang/ruby/binaries,/archives/lang/ruby/doc
 DIR=/alidata1/mirrors/ruby
 OPTS="-m -L -P $DIR -R '*.html' -X $REJECT_DIRS"
 
-wget $OPTS http://ring.u-toyama.ac.jp/archives/lang/ruby/
-# wget $OPTS http://cache.ruby-lang.org/pub/ruby/
+# wget $OPTS http://ring.u-toyama.ac.jp/archives/lang/ruby/
+wget $OPTS http://cache.ruby-lang.org/pub/ruby/
 # wget $OPTS http://ftp.ruby-lang.org/pub/ruby/
