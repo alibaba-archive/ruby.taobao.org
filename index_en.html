@@ -71,9 +71,9 @@ https://ruby.taobao.org
         </ul>
         <p>Modify RVM to use this site as the download source to improve download speeds.</p>
         <h6>For Mac</h6>
-        <div class="highlight"><pre><span class="nv">$ </span>sed -i .bak <span class="s1">'s!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
+        <div class="highlight"><pre><span class="nv">$ </span>sed -i .bak -E <span class="s1">'s!https?://cache.ruby-lang.org/pub/ruby!https://ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
         <h6>For Linux</h6>
-        <div class="highlight"><pre><span class="nv">$ </span>sed -i <span class="s1">'s!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
+        <div class="highlight"><pre><span class="nv">$ </span>sed -i -E <span class="s1">'s!https?://cache.ruby-lang.org/pub/ruby!https://ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
       </div>
 
       <div class="box">

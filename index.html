@@ -70,9 +70,9 @@ https://ruby.taobao.org
         </ul>
         <p>修改 RVM ，改用本站作为下载源, 提高安装速度。</p>
         <h6>For Mac</h6>
-        <div class="highlight"><pre><span class="nv">$ </span>sed -i .bak <span class="s1">'s!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
+        <div class="highlight"><pre><span class="nv">$ </span>sed -i .bak -E <span class="s1">'s!https?://cache.ruby-lang.org/pub/ruby!https://ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
         <h6>For Linux</h6>
-        <div class="highlight"><pre><span class="nv">$ </span>sed -i <span class="s1">'s!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
+        <div class="highlight"><pre><span class="nv">$ </span>sed -i -E <span class="s1">'s!https?://cache.ruby-lang.org/pub/ruby!https://ruby.taobao.org/mirrors/ruby!'</span> <span class="nv">$rvm_path</span>/config/db</pre></div>
       </div>
 
       <div class="box">
